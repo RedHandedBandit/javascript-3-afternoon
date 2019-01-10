@@ -81,10 +81,21 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     1. Write a function called 'removeDuplicates' that will remove all duplicate entries in the workplaceAccidents array.
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
+
+    i need to create a for loop to search through the entire array or a HOF to remove any duplicates in the array
+    i need to write out a conditional also to get rid of the duplicate use include?
 */
 
 //Code Here
-
+function removeDuplicates(arr){
+  let newArray = [ ]
+  for(let i = 0; i < arr.length; i++){
+    if(!newArray.includes(arr[i])){
+      newArray.push(arr[i])
+    }
+  }
+  return newArray
+ }
 
 
 ////////// PROBLEM 3 //////////
@@ -151,9 +162,21 @@ var myCar = {
     1. Write a function called recordCleaner.
     2. Loop over the accidents array.
     3. Change atFaultForAccident from true to false.
+
+    the function needs to take in an obj
+    but for loop over the all arrays with in the obj
+    if/else statement so i can change true to false
+    return the updated array. not a new one
 */
 
 //Code Here
+function recordCleaner(obj){
+  for(let i = 0; i < obj.length; i++){
+    if(accidents.atFaultForAccident === true){
+      return false;
+    }
+  }
+}
 
 
 
