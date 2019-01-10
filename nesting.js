@@ -51,6 +51,21 @@ var employees = [
 */
 
 //Code Here
+function employeeUpdater(){
+  for(let i = 0; i < employees.length; i++){
+  console.log(employees[i])
+  if(employees[i].firstName === 'Theo'){
+    console.log('its theo')
+    employees.splice(i, 1);
+    console.log(employees)
+  }
+
+    else if(employees[i].firstName === 'Lorie'){
+      employees[i].department = 'HR';
+    }
+  }
+  return employees;
+}
 
 
 

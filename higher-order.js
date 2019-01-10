@@ -21,7 +21,9 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 //Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(function(el, index, arr){
+return el %2 === 0;
+})
 
 
 
@@ -44,7 +46,9 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map((el, index, arr) => {
+  return el * 1.07;
+});
 
 
 
@@ -63,7 +67,9 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce((total, el, i, arr) => {
+  return total + el;
+});
 
 
 
@@ -89,7 +95,11 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter((el, i, arr) => {
+  if(monstersInYourPocket[i].CP > 200)
+  {return monstersInYourPocket[i];}
+})
+console.log(myStrongest);
 
 
 
@@ -104,9 +114,17 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 
 /*
   Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array of numbers, one total for each order.
+
+  i need to add the sales tax to all the prices
+  i go through the whole array and get the totals of all the orders (price + tax)
+  i need to return an array of the total number for each object.
 */
 
-let orderTotals // Code here
+let orderTotals = orders.map((el, i, arr) => {
+  orders[i] = orders[i].price + orders[i].tax;
+  return orders[i];
+})
+console.log(orders);
 
 
 
@@ -124,8 +142,20 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 /*
   Use a high order method to create to get the sum of bobsTotal.
+  i need to narrow it down to bobsTotal of all his purchases
+  i need to use a if statement to reduce it down to just bob
+  i need to add bobs totals together and return it out of the function
 */
 
-let bobsTotal //Code Here
+let bobsTotal = purchases.reduce((total, el, i) => {
+  if(purchases[i].owner === 'Bob'){
+    purchases = purchases[i].owner + purchases[i].price;
+  }
+  return purchases;
+}, 0)
+  console.log(bobsTotal);
+    
+    
+  
 
 
